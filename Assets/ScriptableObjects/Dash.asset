@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bcaecdfbd81b54db89c6617899f32f, type: 3}
+  m_Name: Dash
+  m_EditorClassIdentifier: 
+  cardAbility: 2
+  cardArt: {fileID: 2800000, guid: 351cd5d93f906854f899fa418489042c, type: 3}
+  cardName: NA
+  abilityLockedFlavour: 
+  abilityUnlockedFlavour: LOREM IPSUM LOREM IPSUM LOREM IPSUM
+  unlocked: 1
+  cooldown: 1

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1ca63a91b17724bbd99c8fa67e0180, type: 3}
+  m_Name: LSD Material Palette
+  m_EditorClassIdentifier: 
+  array:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3f59a86c2d2530348a13cbe7645689c0, type: 2}
+  - {fileID: 2100000, guid: d8f3173811151f443be896936ea0b1c8, type: 2}
+  - {fileID: 2100000, guid: 94c5f0d812d875140b9cccca83a7948f, type: 2}
+  - {fileID: 2100000, guid: 9cbba587ff0b2da47bf9b6799cb2e525, type: 2}
+  - {fileID: 2100000, guid: 1e41f91e855a7a6499bcd5903eca1682, type: 2}
+  - {fileID: 2100000, guid: c310e14d4fa29d34bbd11f24f83c10dc, type: 2}
+  - {fileID: -1580535799172915004, guid: 2b0c4bbc795c1cd458a0e991993226f3, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
