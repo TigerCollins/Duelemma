@@ -1,0 +1,169 @@
+# Macro for Unity YAML-based asset files.
+[attr]unityyaml -text merge=unityyamlmerge diff eol=lf
+
+# Macro for all binary files that should use Git LFS.
+[attr]lfs -text filter=lfs diff=lfs merge=lfs
+
+# Default to auto-normalized line endings.
+* text=auto
+
+# Code
+*.cs text diff=csharp
+
+## FMODAudio ##
+*.fspro lfs
+*.bank lfs
+
+## Houdini Files ##
+*.hip lfs
+*.hipnc lfs
+*.hiplc lfs
+*.hda lfs
+*.hdanc lfs
+*.otl lfs
+*.pic lfs
+*.rat lfs
+
+## Blender Files ##
+*.blend lfs
+*.BLEND lfs
+
+# Unity Text Assets
+*.meta unityyaml
+*.unity unityyaml
+*.asset unityyaml
+*.prefab unityyaml
+*.mat unityyaml
+*.anim unityyaml
+*.controller unityyaml
+*.overrideController unityyaml
+*.physicMaterial unityyaml
+*.physicsMaterial2D unityyaml
+*.playable unityyaml
+*.mask unityyaml
+*.brush unityyaml
+*.flare unityyaml
+*.fontsettings unityyaml
+*.guiskin unityyaml
+*.giparams unityyaml
+*.renderTexture unityyaml
+*.spriteatlas unityyaml
+*.terrainlayer unityyaml
+*.mixer unityyaml
+*.shadervariants unityyaml
+*.preset unityyaml
+*.asmdef -text diff
+*LightingData.asset lfs
+*.unitypackage lfs
+
+# Unity Binary Assets
+*.cubemap lfs
+*.unitypackage lfs
+# Note: Unity terrain assets must have "-Terrain" suffix.
+*-[Tt]errain.asset -unityyaml lfs
+# Note: Unity navmesh assets must have "-NavMesh" suffix.
+*-[Nn]av[Mm]esh.asset -unityyaml lfs
+
+# Note: Unity Terrain must be in terrain folder at root of assets folder.
+*.asset merge=unityyamlmerge eol=lf
+/Assets/Terrains/*.asset lfs
+#only if subfolders with terrains exist:
+/Assets/Terrains/**/*.asset lfs
+
+# Image
+*.jpg lfs
+*.jpeg lfs
+*.png lfs
+*.apng lfs
+*.atsc lfs
+*.gif lfs
+*.bmp lfs
+*.exr lfs
+*.tga lfs
+*.tiff lfs
+*.tif lfs
+*.iff lfs
+*.pict lfs
+*.dds lfs
+*.xcf lfs
+*.leo lfs
+*.kra lfs
+*.kpp lfs
+*.clip lfs
+*.webm lfs
+*.webp lfs
+*.svg lfs
+*.svgz lfs
+*.psd lfs
+*.afphoto lfs
+*.afdesign lfs
+*.cubemap lfs
+
+# Audio
+*.mp3 lfs
+*.ogg lfs
+*.wav lfs
+*.aiff lfs
+*.aif lfs
+*.mod lfs
+*.it lfs
+*.s3m lfs
+*.xm lfs
+
+## Font Files
+*.ttf lfs
+*.TTF lfs
+
+# Video
+*.mov lfs
+*.avi lfs
+*.asf lfs
+*.mpg lfs
+*.mpeg lfs
+*.mp4 lfs
+*.flv lfs
+*.ogv lfs
+*.wmv lfs
+
+## Archive Files ##
+*.zip lfs
+*.ZIP lfs
+*.gz lfs
+*.GZ lfs
+*.7z lfs
+*.7Z lfs
+
+# 3D
+*.fbx lfs
+*.obj lfs
+*.max lfs
+*.blend lfs
+*.blender lfs
+*.dae lfs
+*.mb lfs
+*.ma lfs
+*.3ds lfs
+*.dfx lfs
+*.c4d lfs
+*.lwo lfs
+*.lwo2 lfs
+*.abc lfs
+*.3dm lfs
+*.bin lfs
+*.glb lfs
+*.bin.fbx lfs
+*.bin.FBX lfs
+
+# Executables
+*.exe lfs
+*.dll lfs
+*.so lfs
+*.pdb lfs
+*.mdb lfs
+
+# Packaging
+*.zip lfs
+*.7z lfs
+*.gz lfs
+*.rar lfs
+*.tar lfs
