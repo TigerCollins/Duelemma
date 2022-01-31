@@ -14,8 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main levels/Level 1/MainHall.unity
     guid: 6b2ab63e6c5830d4abfc37b7c4484024
-  - enabled: 1
-    path: Assets/Scenes/PlayerTest.unity
+  - enabled: 0
+    path: Assets/Scenes/TestScenes/PlayerTest.unity
     guid: 672b59711b30b4745a5fa6a5eaf22580
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e17a2f367bfa7234e9cc30a78d26fa63, type: 2}

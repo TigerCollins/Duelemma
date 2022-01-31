@@ -85,7 +85,11 @@ public class GlobalHelper : MonoBehaviour
             if (UIManager.instance != null)
             {
                 value = UIManager.instance.IsPaused;
-                AudioManager.instance.IsSoundtrackLoweredVolume(value);
+                if(AudioManager.instance != null)
+                {
+                    AudioManager.instance.IsSoundtrackLoweredVolume(value);
+                }
+               
             }
             return value;
         }

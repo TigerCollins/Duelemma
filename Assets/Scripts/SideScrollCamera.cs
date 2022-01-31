@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
+//using UnityEngine.;
 
 public class SideScrollCamera : MonoBehaviour
 {
-    public bool useCamera;
+    public bool useCamera = true;
     [SerializeField] GameObject cameraObject;
     [SerializeField] Transform cameraTarget;
     [SerializeField] PlayerController playerController;
@@ -25,10 +28,36 @@ public class SideScrollCamera : MonoBehaviour
     [SerializeField] bool moveDirectionChangesXOffset;
     [SerializeField] float moveDirectionXOffset;
 
+    [Header("Depth Of Field")]
+    [SerializeField]  Volume postProcessing;
+    [SerializeField] float dofLerpTime;
+    [SerializeField] float zOffset;
+    [SerializeField] bool startWithInitialDistance;
+    [SerializeField] float initalPostProcessingDistance;
+    float dofVelocity = 0;
+
+
+    DepthOfField dof;
+
+    private void Awake()
+    {
+        if (postProcessing.profile.TryGet<DepthOfField>(out var newDOF))
+        {
+            dof = newDOF;
+            if (startWithInitialDistance)
+            {
+                newDOF.focusDistance.overrideState = true;
+                newDOF.focusDistance.value = initalPostProcessingDistance;
+            }
+        }
+       
+        
+    }
 
     private void Start()
     {
         originalPosition = cameraTarget.transform.position;
+       
     }
 
     void FixedUpdate()
@@ -63,9 +92,11 @@ public class SideScrollCamera : MonoBehaviour
 
             cameraObject.transform.position = Vector3.SmoothDamp(cameraObject.transform.position, desiredPosition, ref velocity, cameraDelay);
 
-
         }
 
+        dof.focusDistance.value = Mathf.SmoothDamp(dof.focusDistance.value,Mathf.Abs(cameraTarget.position.z - cameraObject.transform.position.z +zOffset), ref dofVelocity, dofLerpTime);// Distance(cameraTarget., t / lerpTime);
 
     }
+
+
 }

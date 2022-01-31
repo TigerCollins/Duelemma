@@ -456,36 +456,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2807150554123357353
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5319434624368891087}
-  m_Layer: 0
-  m_Name: HairFollowPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5319434624368891087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2807150554123357353}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.087, y: 0.675, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3114611267891543743}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3111495686390456893
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,15 +487,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3111495686390456893}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.3817234, y: -1.8970501, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.234774, y: 4.72, z: -13.746464}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 8732617891454816647}
   - {fileID: 1049619352}
   - {fileID: 1924742591}
   - {fileID: 956990872}
-  - {fileID: 5319434624368891087}
+  - {fileID: 2172114438754277514}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -542,6 +512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
+  pauseMove: 0
+  snapToZAxis: 1
+  snapZAxis: 0
   statsController: {fileID: 1607073792}
   playerAnimator: {fileID: 2536726500216195613}
   characterController: {fileID: 2909470774800876578}
@@ -559,6 +532,7 @@ MonoBehaviour:
     airControlDamping: 2.5
     stopMovementWhenAttacking: 1
     movementStopTime: 0.5
+  knockbackTime: 5
   characterEvents:
     onGrounded:
       m_PersistentCalls:
@@ -586,13 +560,13 @@ MonoBehaviour:
         m_Calls: []
   directionBasedObjectFlips:
   - {fileID: 1439607154}
-  pauseMove: 0
   isFacingRight: 0
+  wallToRight: 0
   _raycast:
     useRaycast: 1
     raycastMask:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 385
     raycastPoint: {fileID: 3114611267891543743}
     raycastDistance: 1.2
     raycastColour: {r: 0.2028302, g: 0.6222379, b: 1, a: 1}
@@ -740,6 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7adbaf6d4e7c7f4eb7c1a413905eb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useCamera: 1
   cameraObject: {fileID: 0}
   cameraTarget: {fileID: 3114611267891543743}
   playerController: {fileID: 5315511273860487878}
@@ -749,6 +724,11 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 2.5, z: -9}
   moveDirectionChangesXOffset: 1
   moveDirectionXOffset: 0.75
+  postProcessing: {fileID: 0}
+  dofLerpTime: 0.1
+  zOffset: 3.21
+  startWithInitialDistance: 1
+  initalPostProcessingDistance: -49.41
 --- !u!114 &1607073792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,6 +761,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onHitWithRecoil:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2037103211
@@ -923,3 +906,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &8143505967238709484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2172114438754277514}
+  m_Layer: 0
+  m_Name: HairFollowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2172114438754277514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8143505967238709484}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.087, y: 0.675, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3114611267891543743}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

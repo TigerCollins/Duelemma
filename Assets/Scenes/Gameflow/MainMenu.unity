@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1017766554}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.030446783, g: 0.04490845, b: 0.1529347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13314,7 +13314,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: dcb65c015af45ee40a39215e6e7a2fe9, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 978057dbef7bb3e4bbf678840ad4290b, type: 2}
 --- !u!114 &1232149696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15629,6 +15629,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1169431937987061102, guid: 695c04f06386539489f1681166325b36, type: 3}
   m_PrefabInstance: {fileID: 7121113999615167949}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1407432517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3111495686390456893, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+  m_PrefabInstance: {fileID: 1940471474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1407432518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407432517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1d1e9a59874634f9e4161281d577c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalColour: {r: 0, g: 0, b: 0, a: 0}
+  overGrowthColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1408381391
 GameObject:
   m_ObjectHideFlags: 0
@@ -20369,7 +20388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3114611267891543743, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1084.3649
+      value: 1081.99
       objectReference: {fileID: 0}
     - target: {fileID: 3114611267891543743, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20377,7 +20396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3114611267891543743, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.284521
+      value: -26.47
       objectReference: {fileID: 0}
     - target: {fileID: 3114611267891543743, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20406,6 +20425,42 @@ PrefabInstance:
     - target: {fileID: 3114611267891543743, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: zOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: lerpTime
+      value: 16.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: useCamera
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: dofLerpTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: cameraObject
+      value: 
+      objectReference: {fileID: 1232149691}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: postProcessing
+      value: 
+      objectReference: {fileID: 1232149695}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: startWithOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: startWithInitialDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235586008436921445, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}
+      propertyPath: initalPostProcessingDistance
+      value: -36.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe4ec0d7a07afad4c8ef6bed317021d6, type: 3}

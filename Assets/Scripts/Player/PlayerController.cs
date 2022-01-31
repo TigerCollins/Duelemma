@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 	bool receivingMovementInput;
 	[SerializeField] bool canMove = true;
 	[HideInInspector] public bool pauseMove = false;
+	[SerializeField] bool snapToZAxis;
+	[SerializeField] float snapZAxis;
 
 
 	[Header("Player Settings")]
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
 	
 
 	[SerializeField] bool isFacingRight;
+	[SerializeField] bool wallToRight;
 
 	[Header("Raycast")]
 	[SerializeField] RaycastDetails _raycast;
@@ -123,9 +126,21 @@ public class PlayerController : MonoBehaviour
 		IsFallingCheck();
 		onUpdateCalled.Invoke();
 		CheckForInputAfterResuming();
-
-
+		
 	}
+
+
+    private void LateUpdate()
+    {
+		
+	}
+    void SnapAxis()
+    {
+		if(snapToZAxis)
+        {
+			transform.position = new Vector3(transform.position.x, transform.position.y, snapZAxis);
+        }
+    }
 
 	void CheckForInputAfterResuming()
     {
@@ -233,7 +248,7 @@ public class PlayerController : MonoBehaviour
 
 	void ApplyMovement()
 	{
-
+		
 		float input = moveAxis.x;
 		if (Mathf.Abs(input) < 0.3f)
 		{
@@ -291,7 +306,22 @@ public class PlayerController : MonoBehaviour
 
 			if (canMove)
 			{
-				moveDirection = new Vector3(movement.MoveVector.x, moveDirection.y, movement.MoveVector.z);
+				//Stops movement when hitting walls
+				if (isHittingWall && wallToRight)
+				{
+					moveDirection = new Vector3(Mathf.Clamp(movement.MoveVector.x,-1000,0), moveDirection.y, movement.MoveVector.z);
+				}
+
+				else if (isHittingWall && !wallToRight)
+				{
+					moveDirection = new Vector3(Mathf.Clamp(movement.MoveVector.x, 0, 1000), moveDirection.y, movement.MoveVector.z);
+				}
+
+				else
+                {
+					moveDirection = new Vector3(movement.MoveVector.x, moveDirection.y, movement.MoveVector.z);
+				}
+				
 			}
 
 			else
@@ -301,6 +331,7 @@ public class PlayerController : MonoBehaviour
 		}
 
 		characterController.Move((moveDirection + secondaryMoveDirection) * Time.deltaTime);
+		SnapAxis();
 	}
 
 	public Vector3 SetMoveDirection
@@ -435,7 +466,9 @@ public class PlayerController : MonoBehaviour
 	public void HittingWallLogic()
     {
 		isHittingWall = HittingObjectInfrontWithoutRigidBody();
-    }
+		
+
+	}
 
 	public bool HitObjectAbove()
     {
@@ -478,6 +511,12 @@ public class PlayerController : MonoBehaviour
             {
 				isHitting = true;
             }
+		}
+
+		if(isHitting)
+        {
+			wallToRight = IsObjectOnRight(transform, hit.transform);
+
 		}
 		return isHitting;
 	}
