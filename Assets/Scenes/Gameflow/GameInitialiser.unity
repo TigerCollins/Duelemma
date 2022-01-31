@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -296,6 +296,88 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16911aa4622f0394da306944cd27a35d, type: 3}
+--- !u!1 &379996853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4879108645159142110, guid: 16911aa4622f0394da306944cd27a35d, type: 3}
+  m_PrefabInstance: {fileID: 379996852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &379996854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379996853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb1b5666482a024ca96c7d4643eef3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 0
+  currentDimension: 0
+  environmentHandler:
+    environmentDimensionObjects: []
+    dimensionAObjects: []
+    dimensionBObjects: []
+    environmentObjectsActive: 0
+  onDimensionChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 379996855}
+        m_TargetAssemblyTypeName: AudioHelper, Assembly-CSharp
+        m_MethodName: PlaySFXSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e080efd5b77615d4bbd4d1fbec7857df, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onChangeFail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 379996855}
+        m_TargetAssemblyTypeName: AudioHelper, Assembly-CSharp
+        m_MethodName: PlaySFXSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 816d10d8570258b479929826b993c91a, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onChangeSucces:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 379996855}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &379996855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379996853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75308e4a62c33d144a2970cc73e7720d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomPitch: 0
 --- !u!1 &516725142
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +981,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1076,7 +1158,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

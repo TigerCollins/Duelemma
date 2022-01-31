@@ -26,6 +26,7 @@ public class LevelLoader : MonoBehaviour
 
     [SerializeField] UnityEvent onTransitionStart;
     [SerializeField] UnityEvent onLoadStart;
+    [SerializeField] UnityEvent onLoadStartNonMenu;
     [SerializeField] UnityEvent onLoadFinished;
     [SerializeField] UnityEvent onTransitionFinished;
 
@@ -116,6 +117,10 @@ public class LevelLoader : MonoBehaviour
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(targetSceneIndex, LoadSceneMode.Single);
  
         onLoadStart.Invoke();
+        if(targetSceneIndex>1)
+        {
+            onLoadStartNonMenu.Invoke();
+        }
         //When the load is still in progress, output the Text and progress bar
         while (!asyncOperation.isDone)
         {

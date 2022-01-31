@@ -15,6 +15,8 @@ public class DimensionSwitcher : MonoBehaviour
     [SerializeField] DimensionEnvironmentHandler environmentHandler;
     [Space(10)]
     public UnityEvent onDimensionChange;
+    public UnityEvent onChangeFail;
+    public UnityEvent onChangeSucces;
 
 
     private void Awake()

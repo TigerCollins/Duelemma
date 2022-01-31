@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GlobalHelper : MonoBehaviour
 {
@@ -106,6 +107,14 @@ public class GlobalHelper : MonoBehaviour
         }
 
         return value;
+    }
+
+    public void ChangeDimension(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            DimensionSwitcher.instance.onDimensionChange.Invoke();
+        }
     }
 
 }

@@ -17,5 +17,8 @@ MonoBehaviour:
   baseAttack: 1
   baseDefence: 0
   knockbackPower: 23.76
-  maxLives: 3
+  canDealRecoil: 0
+  timeBeforeTryingRecoil: 0.5
+  recoilChance: 10
+  maxLives: 0
   baseLives: 3
