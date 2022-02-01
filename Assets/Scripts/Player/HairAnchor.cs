@@ -22,7 +22,7 @@ public class HairAnchor : MonoBehaviour
 
     [Space(10)]
 
-    public Vector2 rootOffset = Vector2.zero;
+    public Vector3 rootOffset = Vector3.zero;
     public Transform followPoint;
 
     [Header("Hair 'Juice'")]
@@ -139,7 +139,7 @@ public class HairAnchor : MonoBehaviour
         //The point the hair moves to (for animations)
         if(followPoint!=null)
         {
-            rootOffset = followPoint.transform.localPosition - new Vector3( rootAnchorOffset.x, rootAnchorOffset.y,0);
+            rootOffset = followPoint.transform.localPosition - new Vector3( rootAnchorOffset.x, rootAnchorOffset.y, rootOffset.z);
         }
 
             Transform pieceToFollow = hairAnchor;

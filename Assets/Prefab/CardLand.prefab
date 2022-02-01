@@ -762,14 +762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc586ed8f590e1d4095977e434969d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardFlipFeedback: {fileID: 4879108644423303869}
-  sideAText:
-    title: {fileID: 6341920416314361666}
-    body: {fileID: 6341920417727387844}
-  sideBText:
-    title: {fileID: 6341920417985926745}
-    body: {fileID: 6341920417420469621}
-  thisCardRenderer: {fileID: 4879108644423303857}
+  title: {fileID: 0}
+  cardImage: {fileID: 0}
   sideACardDetails: {fileID: 11400000, guid: aeb64136cb4b95047a0fd19408b9c96b, type: 2}
   sideBCardDetails: {fileID: 11400000, guid: 26a9dc6b495bf1d46a9ffbb23a2657a9, type: 2}
 --- !u!114 &4879108644423303869
@@ -1306,6 +1300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4879108645159142109}
   - component: {fileID: 4879108645159142107}
+  - component: {fileID: 8272086517568033073}
   m_Layer: 6
   m_Name: CardLand
   m_TagString: Untagged
@@ -1342,6 +1337,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityCards: []
+--- !u!114 &8272086517568033073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879108645159142110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b72cbd37e79474e9bb9a41ffd32bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCardFeedbacks: []
 --- !u!1 &4879108645453626911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,14 +1464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc586ed8f590e1d4095977e434969d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardFlipFeedback: {fileID: 4879108645453626887}
-  sideAText:
-    title: {fileID: 4879108644773819778}
-    body: {fileID: 4879108644042693227}
-  sideBText:
-    title: {fileID: 4879108643866914871}
-    body: {fileID: 4879108644419154971}
-  thisCardRenderer: {fileID: 4879108645453626908}
+  title: {fileID: 0}
+  cardImage: {fileID: 0}
   sideACardDetails: {fileID: 11400000, guid: a7ebc9b020f4e7b46b80e1f7f7ec4633, type: 2}
   sideBCardDetails: {fileID: 11400000, guid: e09006746b6d64e47bbcaab18b7b5952, type: 2}
 --- !u!114 &4879108645453626887
@@ -1821,14 +1823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc586ed8f590e1d4095977e434969d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardFlipFeedback: {fileID: 4879108645548898387}
-  sideAText:
-    title: {fileID: 6341920416183152301}
-    body: {fileID: 6341920417412774982}
-  sideBText:
-    title: {fileID: 6341920418117617327}
-    body: {fileID: 6341920417012370059}
-  thisCardRenderer: {fileID: 4879108645548898408}
+  title: {fileID: 0}
+  cardImage: {fileID: 0}
   sideACardDetails: {fileID: 11400000, guid: aeb64136cb4b95047a0fd19408b9c96b, type: 2}
   sideBCardDetails: {fileID: 11400000, guid: 5ea27d08e78a6c6499214ed62e1aa771, type: 2}
 --- !u!114 &4879108645548898387
@@ -2153,14 +2149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc586ed8f590e1d4095977e434969d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardFlipFeedback: {fileID: 4879108645584794925}
-  sideAText:
-    title: {fileID: 6341920417414693658}
-    body: {fileID: 6341920417978420322}
-  sideBText:
-    title: {fileID: 6341920417848658190}
-    body: {fileID: 6341920417563738755}
-  thisCardRenderer: {fileID: 4879108645584794914}
+  title: {fileID: 0}
+  cardImage: {fileID: 0}
   sideACardDetails: {fileID: 11400000, guid: 45bef818d1b9f5a4c8d0817b476e8eed, type: 2}
   sideBCardDetails: {fileID: 11400000, guid: efca9fb440ad3fb49bab8a4f38e0fc4d, type: 2}
 --- !u!114 &4879108645584794925

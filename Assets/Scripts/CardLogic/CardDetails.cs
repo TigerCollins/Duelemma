@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Feedbacks;
 
 [CreateAssetMenu(fileName = "NewCard", menuName = "Scriptable Objects/Card Details", order = 1)]
 public class CardDetails : ScriptableObject
 {
     [SerializeField] CardAbilities.Ability cardAbility;
-    [SerializeField] Texture cardArt;
+    [SerializeField] Sprite cardArt;
     [SerializeField] string cardName;
     [SerializeField] string abilityLockedFlavour;
     [SerializeField] string abilityUnlockedFlavour;
@@ -15,6 +16,8 @@ public class CardDetails : ScriptableObject
 
     [SerializeField] bool unlocked;
     [SerializeField] float cooldown;
+
+
 
     public float CardCooldown
     {
@@ -32,7 +35,7 @@ public class CardDetails : ScriptableObject
         }
     }
 
-    public Texture Art
+    public Sprite Art
     {
         get
         {

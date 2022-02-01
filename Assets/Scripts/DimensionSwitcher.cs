@@ -40,7 +40,7 @@ public class DimensionSwitcher : MonoBehaviour
                 instance.environmentHandler.dimensionAObjects.Add(item);
             }
 
-            foreach (GameObject item in environmentHandler.dimensionAObjects)
+            foreach (GameObject item in environmentHandler.dimensionBObjects)
             {
                 instance.environmentHandler.dimensionBObjects.Add(item);
             }

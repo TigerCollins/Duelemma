@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 using MoreMountains.Feedbacks;
 
 public class CardObject : MonoBehaviour
 {
-    [SerializeField] MMFeedbacks cardFlipFeedback;
-    float zRotation;
-
     PlayerAbilities playerAbilities;
 
     [Header("Logic")]
-    [SerializeField] TextMeshGroups sideAText;
-    [SerializeField] TextMeshGroups sideBText;
-    [SerializeField] Renderer thisCardRenderer;
+    [SerializeField] TextMeshProUGUI title;
+    [SerializeField] TextMeshProUGUI subtext;
+    [SerializeField] Image cardImage;
     [SerializeField] CardDetails sideACardDetails;
     [SerializeField] CardDetails sideBCardDetails;
+
+
+
     bool aSideCardIsReady = true;
     bool bSideCardIsReady = true;
 
@@ -28,50 +29,47 @@ public class CardObject : MonoBehaviour
 
     public void Init()
     {
-        PlayCardFlip();
+       // PlayCardFlip();
         SetCardTextures();
         SetCardText();
+       
     }
 
-    void SetCardTextures()
-    {
-        if (thisCardRenderer != null)
-        {
-            thisCardRenderer.material.SetTexture("Back_Face_Texture", sideACardDetails.Art);
-            thisCardRenderer.material.SetTexture("Card_Colour_Texture", sideBCardDetails.Art);
-        }
-
-    }
-
-    void SetCardText()
-    {
-        sideAText.title.text = sideACardDetails.CardName;
-        sideAText.body.text = sideACardDetails.UnlockedAbilityFlavour;
-        sideBText.title.text = sideBCardDetails.CardName;
-        sideBText.body.text = sideBCardDetails.UnlockedAbilityFlavour;
-    }
-
-    public void PlayCardFlip()
-    {
+    public void SetCardTextures()
+    {            
         if (DimensionSwitcher.instance.CurrentDimension() == GlobalHelper.Dimensions.dimensionA)
         {
+            cardImage.sprite = sideACardDetails.Art;
+        }
 
-            if (cardFlipFeedback.TryGetComponent(out MMFeedbackRotation rotationFeedback))
+        else
+        {
+            cardImage.sprite = sideBCardDetails.Art;
+        }
+    }
+
+    public void SetCardText()
+    {
+        if(DimensionSwitcher.instance.CurrentDimension() == GlobalHelper.Dimensions.dimensionA)
+        {
+            title.text = sideACardDetails.CardName;
+            if(subtext != null)
             {
-                rotationFeedback.DestinationAngles = new Vector3(90, 0, 180);
+                subtext.text = sideACardDetails.UnlockedAbilityFlavour;
             }
         }
 
         else
         {
-            if (cardFlipFeedback.TryGetComponent(out MMFeedbackRotation rotationFeedback))
+            title.text = sideBCardDetails.CardName;
+            if (subtext != null)
             {
-                rotationFeedback.DestinationAngles = new Vector3(90, 0, 0);
+                subtext.text = sideBCardDetails.UnlockedAbilityFlavour;
             }
         }
-        cardFlipFeedback.Initialization();
-        cardFlipFeedback.PlayFeedbacks();
     }
+
+ 
 
     bool BothSidesLocked()
     {
@@ -183,9 +181,3 @@ public class CardObject : MonoBehaviour
     }
 }
 
-[System.Serializable]
-public class TextMeshGroups
-{
-    public TextMeshPro title;
-    public TextMeshPro body;
-}

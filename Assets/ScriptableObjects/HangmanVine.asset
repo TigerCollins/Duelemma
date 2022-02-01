@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: HangmanVine
   m_EditorClassIdentifier: 
   cardAbility: 4
-  cardArt: {fileID: 2800000, guid: 351cd5d93f906854f899fa418489042c, type: 3}
-  cardName: NA
+  cardArt: {fileID: 21300000, guid: 245c8799580a2cc45865edbe97904668, type: 3}
+  cardName: The Hanged Man
   abilityLockedFlavour: 
-  abilityUnlockedFlavour: LOREM IPSUM LOREM IPSUM LOREM IPSUM
+  abilityUnlockedFlavour: Hang your opponents from a vine for a moment!
   unlocked: 1
   cooldown: 1

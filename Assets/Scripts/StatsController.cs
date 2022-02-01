@@ -110,32 +110,38 @@ public class StatsController : MonoBehaviour
     {
         set
         {
-            //Event Logic
-            if (value > health)
+            if(health != value)
             {
-                onHealthGained.Invoke();
-            }
+                UIManager.instance.onHealthChanged.Invoke(value);
 
-            else if(value < health)
-            {
-                Debug.Log(transform.name + " lost health");
-                onHealthLost.Invoke();
-            }
-
-            //New health Value
-            health = Mathf.Clamp(value,0,maxHealth);
-
-            //What to do when no health 
-            if(health <= 0)
-            {
-                if (LivesRemaining > 0)
+                //Event Logic
+                if (value > health)
                 {
-                    health = statsProfile.Health;
-                    onLifeLost.Invoke();
+                    onHealthGained.Invoke();
                 }
-                LivesRemaining = LivesRemaining - 1;
 
+                else
+                {
+                    Debug.Log(transform.name + " lost health");
+                    onHealthLost.Invoke();
+                }
+
+                //New health Value
+                health = Mathf.Clamp(value, 0, maxHealth);
+
+                //What to do when no health 
+                if (health <= 0)
+                {
+                    if (LivesRemaining > 0)
+                    {
+                        health = statsProfile.Health;
+                        onLifeLost.Invoke();
+                    }
+                    LivesRemaining = LivesRemaining - 1;
+
+                }
             }
+            
         }
 
         get

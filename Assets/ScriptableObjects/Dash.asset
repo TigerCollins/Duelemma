@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Dash
   m_EditorClassIdentifier: 
   cardAbility: 2
-  cardArt: {fileID: 2800000, guid: 351cd5d93f906854f899fa418489042c, type: 3}
-  cardName: NA
+  cardArt: {fileID: 21300000, guid: 96678a4a7b26994428b3e9759421639e, type: 3}
+  cardName: Chariot
   abilityLockedFlavour: 
-  abilityUnlockedFlavour: LOREM IPSUM LOREM IPSUM LOREM IPSUM
+  abilityUnlockedFlavour: Dash around like you just used a chariot!
   unlocked: 1
   cooldown: 1

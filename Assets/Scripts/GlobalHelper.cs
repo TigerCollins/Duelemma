@@ -109,12 +109,6 @@ public class GlobalHelper : MonoBehaviour
         return value;
     }
 
-    public void ChangeDimension(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            DimensionSwitcher.instance.onDimensionChange.Invoke();
-        }
-    }
+  
 
 }

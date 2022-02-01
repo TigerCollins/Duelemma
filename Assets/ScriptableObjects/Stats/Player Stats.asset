@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197bd21a2d7c29a4b9d316ec730e83a2, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 7
   baseHealth: 5
   baseAttack: 1
   baseDefence: 0
@@ -21,4 +21,4 @@ MonoBehaviour:
   timeBeforeTryingRecoil: 0.5
   recoilChance: 10
   maxLives: 0
-  baseLives: 3
+  baseLives: 0

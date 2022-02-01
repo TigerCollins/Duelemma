@@ -669,7 +669,13 @@ public class PlayerController : MonoBehaviour
 			npc.Attack();
 			
 		}
-    }
+
+		else if (other.transform.TryGetComponent(out LevelLoadTrigger loadLevel))
+		{
+			loadLevel.LoadNextLevel();
+			canMove = false;
+		}
+	}
 
 	public void GetKnockBack()
 	{

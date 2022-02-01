@@ -23,7 +23,13 @@ public class UIManager : MonoBehaviour
 
     public GameObject levelLoaderToMainMenuPrefab;
     public GameObject levelLoaderToGamePrefab;
-    
+
+    [Space(10)]
+    public UnityEvent<int> onHealthChanged;
+
+
+
+
     public bool IsPaused
     {
         get
