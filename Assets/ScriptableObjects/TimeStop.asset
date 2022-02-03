@@ -17,5 +17,5 @@ MonoBehaviour:
   cardName: The World
   abilityLockedFlavour: 
   abilityUnlockedFlavour: ZA WARUDO! Grind time to a near halt temporarily!
-  unlocked: 1
+  unlocked: 0
   cooldown: 4

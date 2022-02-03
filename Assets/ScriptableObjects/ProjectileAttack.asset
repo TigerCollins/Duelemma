@@ -17,5 +17,5 @@ MonoBehaviour:
   cardName: The Magician
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Use your card as a projectile to harm your enemies!
-  unlocked: 1
+  unlocked: 0
   cooldown: 2

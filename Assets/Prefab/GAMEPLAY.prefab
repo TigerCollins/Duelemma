@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &235891456238062120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8992807000093421630}
+  - component: {fileID: 2006946907151136458}
+  m_Layer: 0
+  m_Name: Helper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8992807000093421630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235891456238062120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6371251279158313273}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2006946907151136458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235891456238062120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1d1e9a59874634f9e4161281d577c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalColour: {r: 0.2, g: 0.25490198, b: 0.45882353, a: 1}
+  overGrowthColor: {r: 0.39873782, g: 0.6509434, b: 0.22414559, a: 0}
+  onLevelChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6371251279158313272
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +82,7 @@ Transform:
   - {fileID: 2640483992427622939}
   - {fileID: 6371251280254282754}
   - {fileID: 8580558169844898012}
+  - {fileID: 8992807000093421630}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -457,7 +506,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6371251280254282754}
-  - component: {fileID: 6371251280254282755}
   - component: {fileID: 6371251280254282812}
   m_Layer: 0
   m_Name: ScriptController
@@ -480,20 +528,6 @@ Transform:
   m_Father: {fileID: 6371251279158313273}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6371251280254282755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6371251280254282753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1d1e9a59874634f9e4161281d577c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalColour: {r: 0.2, g: 0.25490198, b: 0.45882353, a: 1}
-  overGrowthColor: {r: 0.39873782, g: 0.6509434, b: 0.22414559, a: 0}
 --- !u!114 &6371251280254282812
 MonoBehaviour:
   m_ObjectHideFlags: 0

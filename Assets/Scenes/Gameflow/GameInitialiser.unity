@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  currentDimension: 0
+  currentDimension: 1
   environmentHandler:
     environmentDimensionObjects: []
     dimensionAObjects: []
@@ -1380,7 +1380,7 @@ GameObject:
   - component: {fileID: 1630989727}
   - component: {fileID: 1630989726}
   m_Layer: 0
-  m_Name: Helper
+  m_Name: GlobalHelper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1399,7 +1399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalColour: {r: 0.2, g: 0.25490198, b: 0.45882353, a: 1}
-  overGrowthColor: {r: 0.4962175, g: 0.5943396, b: 0.5029846, a: 0}
+  overGrowthColor: {r: 0.1764706, g: 0.24705882, b: 0.12941177, a: 0}
   onLevelChange:
     m_PersistentCalls:
       m_Calls: []

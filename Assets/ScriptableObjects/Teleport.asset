@@ -17,5 +17,5 @@ MonoBehaviour:
   cardName: Temperance
   abilityLockedFlavour: 
   abilityUnlockedFlavour: It's almost like you just teleported!
-  unlocked: 1
+  unlocked: 0
   cooldown: 3

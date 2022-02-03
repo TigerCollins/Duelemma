@@ -35,7 +35,17 @@ public class GlobalHelper : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+      
     }
 
     public enum Dimensions
@@ -105,7 +115,6 @@ public class GlobalHelper : MonoBehaviour
         bool value = true;
 
         int sceneID = SceneManager.GetActiveScene().buildIndex;
-        print(sceneID);
         if(sceneID >1)
         {
             value = false;

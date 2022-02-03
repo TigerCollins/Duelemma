@@ -521,10 +521,7 @@ public class PlayerController : MonoBehaviour
 		return isHitting;
 	}
 
-	void OnControllerColliderHit(ControllerColliderHit hit)
-	{
-			RigidBodyPhysics(hit);
-	}
+	
 
 	public void RigidBodyPhysics(ControllerColliderHit hit)
 	{

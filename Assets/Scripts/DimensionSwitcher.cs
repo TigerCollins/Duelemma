@@ -78,6 +78,23 @@ public class DimensionSwitcher : MonoBehaviour
         return currentDimension;
     }
 
+
+    public void ChangeDimensions()
+    {
+        if (currentDimension != GlobalHelper.Dimensions.dimensionA)
+        {
+            currentDimension = GlobalHelper.Dimensions.dimensionA;
+        }
+
+        else
+        {
+            currentDimension = GlobalHelper.Dimensions.dimensionB;
+        }
+
+        onDimensionChange.Invoke();
+    }
+
+
     public void ChangeDimensionViaInput(InputAction.CallbackContext input)
     {
         if(input.performed)
