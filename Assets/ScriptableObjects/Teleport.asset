@@ -16,6 +16,6 @@ MonoBehaviour:
   cardArt: {fileID: 21300000, guid: 8378d20d734e9404c9ff88ac43dccef9, type: 3}
   cardName: Temperance
   abilityLockedFlavour: 
-  abilityUnlockedFlavour: Za Warudo! It's almost like you just teleported!
+  abilityUnlockedFlavour: It's almost like you just teleported!
   unlocked: 1
   cooldown: 3

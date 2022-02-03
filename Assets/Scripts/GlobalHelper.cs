@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class GlobalHelper : MonoBehaviour
@@ -13,6 +14,9 @@ public class GlobalHelper : MonoBehaviour
     public static GlobalHelper instance;
     float universalTimeScale = 1f;
     float playerTimeScale = 1f;
+    public UnityEvent onLevelChange;
+
+
 
     public void DimensionColour(Dimensions newDimension)
     {
@@ -101,6 +105,7 @@ public class GlobalHelper : MonoBehaviour
         bool value = true;
 
         int sceneID = SceneManager.GetActiveScene().buildIndex;
+        print(sceneID);
         if(sceneID >1)
         {
             value = false;
@@ -108,7 +113,5 @@ public class GlobalHelper : MonoBehaviour
 
         return value;
     }
-
-  
 
 }

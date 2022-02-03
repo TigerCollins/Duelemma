@@ -9,8 +9,8 @@ using MoreMountains.Feedbacks;
 public class CardObject : MonoBehaviour
 {
     PlayerAbilities playerAbilities;
-
-    [Header("Logic")]
+    public Transform parentTransform;
+     [Header("Logic")]
     [SerializeField] TextMeshProUGUI title;
     [SerializeField] TextMeshProUGUI subtext;
     [SerializeField] Image cardImage;
@@ -71,7 +71,7 @@ public class CardObject : MonoBehaviour
 
  
 
-    bool BothSidesLocked()
+    public bool BothSidesLocked()
     {
         bool bothLocked = false;
         if (!sideACardDetails.IsUnlocked && !sideBCardDetails.IsUnlocked)

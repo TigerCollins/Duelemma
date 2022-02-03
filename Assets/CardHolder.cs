@@ -10,22 +10,37 @@ public class CardHolder : MonoBehaviour
     [SerializeField] MMFeedbacks cardInfoFeedback;
     [SerializeField] CardObject[] cardInfoObjects;
 
-
+    [SerializeField] float levelLoadDelay = 3;
 
     private void Start()
     {
         DimensionSwitcher.instance.onDimensionChange.AddListener(delegate { PlayCardInfoFeedback(); });
+        GlobalHelper.instance.onLevelChange.AddListener(delegate { StartCoroutine(ShowCards()); });
     }
 
     public void PlayCardInfoFeedback()
     {
-        foreach (CardObject item in cardInfoObjects)
+        if(!GlobalHelper.InMainMenu())
         {
-            item.SetCardTextures();
-            item.SetCardText();
-            item.SetCardTextures();
+            foreach (CardObject item in cardInfoObjects)
+            {
+                item.SetCardTextures();
+                item.SetCardText();
+                item.SetCardTextures();
+
+                    item.parentTransform.gameObject.SetActive(!item.BothSidesLocked());
+            
+            }
+            cardInfoFeedback.PlayFeedbacks();
         }
-        cardInfoFeedback.PlayFeedbacks();
     }
 
+    public IEnumerator ShowCards()
+    {
+        yield return new WaitForSecondsRealtime(levelLoadDelay);
+        PlayCardInfoFeedback();
+    }
+
+
+   
 }

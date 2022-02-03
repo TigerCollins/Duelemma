@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6371251279836888121}
   - component: {fileID: 6371251279836888120}
+  - component: {fileID: 7200325393624557052}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -188,9 +189,9 @@ MonoBehaviour:
     m_ActionName: Player/Interact[/Keyboard/x]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6371251279640266360}
-        m_TargetAssemblyTypeName: DimensionSwitcher, Assembly-CSharp
-        m_MethodName: ChangeDimensionViaInput
+      - m_Target: {fileID: 7200325393624557052}
+        m_TargetAssemblyTypeName: DimensionSwitchHelper, Assembly-CSharp
+        m_MethodName: ChangeDimension
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -379,6 +380,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7200325393624557052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371251279836888127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e45faf203050c47a6b072d3d476ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6371251280205271662
 MonoBehaviour:
   m_ObjectHideFlags: 0

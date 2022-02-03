@@ -128,13 +128,12 @@ public class LevelLoader : MonoBehaviour
             progress= asyncOperation.progress * 100;
             yield return null;
         }
-
+       
         onLoadFinished.Invoke();
         progress = asyncOperation.progress * 100;
 
         yield return new WaitForSecondsRealtime(delayOnceLoaded);
- 
-        transitionOut.Events.OnComplete.AddListener(delegate { onTransitionFinished.Invoke(); Destroy(gameObject);  });
+        transitionOut.Events.OnComplete.AddListener(delegate { onTransitionFinished.Invoke(); Destroy(gameObject); GlobalHelper.instance.onLevelChange.Invoke(); });
         transitionOut.Initialization();
         transitionOut.PlayFeedbacks();
 
@@ -163,12 +162,14 @@ public class LevelLoader : MonoBehaviour
             progress= asyncOperation.progress * 100;
             yield return null;
         }
+       
         onLoadFinished.Invoke();
         progress = asyncOperation.progress * 100;
 
         yield return new WaitForSecondsRealtime(delayOnceLoaded);
 
-        transitionOut.Events.OnComplete.AddListener(delegate { onTransitionFinished.Invoke(); Destroy(gameObject); });
+      
+        transitionOut.Events.OnComplete.AddListener(delegate { onTransitionFinished.Invoke(); Destroy(gameObject); GlobalHelper.instance.onLevelChange.Invoke(); });
         transitionOut.Initialization();
         transitionOut.PlayFeedbacks();
         
