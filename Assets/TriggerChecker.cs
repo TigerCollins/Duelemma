@@ -10,6 +10,10 @@ public class TriggerChecker : MonoBehaviour
         {
             swapback.SwapDimensionBack();
         }
-
+        if (other.TryGetComponent(out GameOverHelper gameOver))
+        {
+            Time.timeScale = 0;
+            gameOver.GameoverFromWin();
+        }
     }
 }
