@@ -18,4 +18,4 @@ MonoBehaviour:
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Use your card as a projectile to harm your enemies!
   unlocked: 0
-  cooldown: 2
+  cooldown: 2.5

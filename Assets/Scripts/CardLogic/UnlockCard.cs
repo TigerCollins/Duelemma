@@ -6,14 +6,14 @@ public class UnlockCard : MonoBehaviour
 {
 
     [SerializeField] CardAbilities.Ability abilityToUnlock;
+    [SerializeField] CardAbilities.Ability secondAbilityToUnlock;
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.TryGetComponent(out PlayerAbilities playerAbilities))
-        {
-            playerAbilities.UnlockAbility(abilityToUnlock);
+   public void UnlockAbility()
+    { 
+            PlayerAbilities.instance.UnlockAbility(abilityToUnlock);
+            PlayerAbilities.instance.UnlockAbility(secondAbilityToUnlock);
             Destroy(this.gameObject);
-        }
+        
     }
 }

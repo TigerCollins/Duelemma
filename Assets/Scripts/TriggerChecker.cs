@@ -15,5 +15,10 @@ public class TriggerChecker : MonoBehaviour
             Time.timeScale = 0;
             gameOver.GameoverFromWin();
         }
+
+        if(other.TryGetComponent(out UnlockCard newCard))
+        {
+            newCard.UnlockAbility();
+        }
     }
 }

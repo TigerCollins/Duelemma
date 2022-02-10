@@ -32047,6 +32047,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardUnlock
       objectReference: {fileID: 0}
+    - target: {fileID: 1458851853553938570, guid: c55e8651089cf364abe461a4baa9565e, type: 3}
+      propertyPath: abilityToUnlock
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458851853553938570, guid: c55e8651089cf364abe461a4baa9565e, type: 3}
+      propertyPath: secondAbilityToUnlock
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55e8651089cf364abe461a4baa9565e, type: 3}
 --- !u!1001 &1228899535

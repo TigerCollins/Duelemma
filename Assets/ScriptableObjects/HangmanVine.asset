@@ -18,4 +18,4 @@ MonoBehaviour:
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Hang your opponents from a vine for a moment!
   unlocked: 0
-  cooldown: 1
+  cooldown: 2.5

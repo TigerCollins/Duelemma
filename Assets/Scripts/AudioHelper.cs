@@ -5,17 +5,18 @@ using UnityEngine;
 public class AudioHelper : MonoBehaviour
 {
     public bool randomPitch;
+    public float volumeOveride;
 
     public void PlayMenuSound(AudioClip desiredAudioClip)
     {
         if(!randomPitch)
         {
-            AudioManager.instance.MenuAudioOneShot(desiredAudioClip);
+            AudioManager.instance.MenuAudioOneShot(desiredAudioClip, volumeOveride);
         }
 
         else
         {
-            AudioManager.instance.MenuAudioPitchedShot(desiredAudioClip);
+            AudioManager.instance.MenuAudioPitchedShot(desiredAudioClip, volumeOveride);
         }
         
     }
@@ -24,12 +25,12 @@ public class AudioHelper : MonoBehaviour
     {
         if (!randomPitch)
         {
-            AudioManager.instance.SFXAudioOneShot(desiredAudioClip);
+            AudioManager.instance.SFXAudioOneShot(desiredAudioClip, volumeOveride);
         }
 
         else
         {
-            AudioManager.instance.SFXAudioPitchedOneShot(desiredAudioClip);
+            AudioManager.instance.SFXAudioPitchedOneShot(desiredAudioClip, volumeOveride);
         }
 
     }

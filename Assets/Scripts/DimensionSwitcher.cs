@@ -21,15 +21,7 @@ public class DimensionSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        CheckForMultiple();
-        
-        onDimensionChange.AddListener(delegate {environmentHandler.ChangeEnvironmentDimension(); });
-        onDimensionChange.AddListener(delegate { GlobalHelper.instance.DimensionColour(currentDimension); });
-    }
-
-    void CheckForMultiple()
-    {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogError("This is the second DimensionSwitch, it is on '" + gameObject.name + "'. The original (the one used for functionality) is on '" + instance.gameObject.name + "', the other has now been destroyed.");
 
@@ -52,7 +44,12 @@ public class DimensionSwitcher : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        onDimensionChange.AddListener(delegate {environmentHandler.ChangeEnvironmentDimension(); });
+        onDimensionChange.AddListener(delegate { GlobalHelper.instance.DimensionColour(currentDimension); });
     }
+
+  
 
     // Update is called once per frame
     void Update()

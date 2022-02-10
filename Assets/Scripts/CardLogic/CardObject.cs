@@ -19,8 +19,9 @@ public class CardObject : MonoBehaviour
 
 
 
-    bool aSideCardIsReady = true;
-    bool bSideCardIsReady = true;
+    [SerializeField] bool aSideCardIsReady = true;
+    [SerializeField] bool bSideCardIsReady = true;
+    Coroutine fillCoroutine;
 
     private void Start()
     {
@@ -39,12 +40,12 @@ public class CardObject : MonoBehaviour
     {            
         if (DimensionSwitcher.instance.CurrentDimension() == GlobalHelper.Dimensions.dimensionA)
         {
-            cardImage.sprite = sideACardDetails.Art;
+          ///  cardImage.sprite = sideACardDetails.Art;
         }
 
         else
         {
-            cardImage.sprite = sideBCardDetails.Art;
+           // cardImage.sprite = sideBCardDetails.Art;
         }
     }
 
@@ -86,36 +87,38 @@ public class CardObject : MonoBehaviour
     {
         if (context.performed)
         {
-            
-            PlayerController.instance.characterEvents.onAbilityUsed.Invoke();
+           // print("okefeqw");
+           
             if (DimensionSwitcher.instance != null)
             {
                 if (DimensionSwitcher.instance.CurrentDimension() == GlobalHelper.Dimensions.dimensionA)
                 {
                     if (sideACardDetails.IsUnlocked && aSideCardIsReady)
                     {
+                        PlayerController.instance.characterEvents.onAbilityUsed.Invoke();
+                        PlayerController.instance.HaltMovement();
                         switch (sideACardDetails.CardAbility)
                         {
                             case CardAbilities.Ability.DimensionSwap:
                                 DimensionSwitcher.instance.onDimensionChange.Invoke();
                                 break;
                             case CardAbilities.Ability.Teleport:
-                                playerAbilities.ThrowTeleportCard();
+                                PlayerAbilities.instance.ThrowTeleportCard();
                                 break;
                             case CardAbilities.Ability.Dash:
-                                playerAbilities.DashMovement();
+                                PlayerAbilities.instance.DashMovement();
                                 break;
                             case CardAbilities.Ability.TimeStop:
-                                playerAbilities.FreezeTimeAbility();
+                                PlayerAbilities.instance.FreezeTimeAbility();
                                 break;
                             case CardAbilities.Ability.HangmanVine:
-                                playerAbilities.SuspendTarget();
+                                PlayerAbilities.instance.SuspendTarget();
                                 break;
                             case CardAbilities.Ability.RockThrow:
-                                playerAbilities.ThrowRock();
+                                PlayerAbilities.instance.ThrowRock();
                                 break;
                             case CardAbilities.Ability.ProjectileAttack:
-                                playerAbilities.ProjectileAttack();
+                                PlayerAbilities.instance.ProjectileAttack();
                                 break;
                             default:
                                 break;
@@ -128,28 +131,31 @@ public class CardObject : MonoBehaviour
                 {
                     if (sideBCardDetails.IsUnlocked && bSideCardIsReady)
                     {
+                        PlayerController.instance.HaltMovement();
+
+                        PlayerController.instance.characterEvents.onAbilityUsed.Invoke();
                         switch (sideBCardDetails.CardAbility)
                         {
                             case CardAbilities.Ability.DimensionSwap:
                                 DimensionSwitcher.instance.onDimensionChange.Invoke();
                                 break;
                             case CardAbilities.Ability.Teleport:
-                                playerAbilities.ThrowTeleportCard();
+                                PlayerAbilities.instance.ThrowTeleportCard();
                                 break;
                             case CardAbilities.Ability.Dash:
-                                playerAbilities.DashMovement();
+                                PlayerAbilities.instance.DashMovement();
                                 break;
                             case CardAbilities.Ability.TimeStop:
-                                playerAbilities.FreezeTimeAbility();
+                                PlayerAbilities.instance.FreezeTimeAbility();
                                 break;
                             case CardAbilities.Ability.HangmanVine:
-                                playerAbilities.SuspendTarget();
+                                PlayerAbilities.instance.SuspendTarget();
                                 break;
                             case CardAbilities.Ability.RockThrow:
-                                playerAbilities.ThrowRock();
+                                PlayerAbilities.instance.ThrowRock();
                                 break;
                             case CardAbilities.Ability.ProjectileAttack:
-                                playerAbilities.ProjectileAttack();
+                                PlayerAbilities.instance.ProjectileAttack();
                                 break;
                             default:
                                 break;
@@ -163,6 +169,11 @@ public class CardObject : MonoBehaviour
 
     public IEnumerator Cooldown(float cooldown, GlobalHelper.CardSide cardSide)
     {
+        if(fillCoroutine != null)
+        {
+          //  StopCoroutine(fillCoroutine);
+        }
+        fillCoroutine = StartCoroutine(UpdateFillAmount(cooldown, cardSide));
         switch (cardSide)
         {
             case GlobalHelper.CardSide.aSide:
@@ -179,5 +190,37 @@ public class CardObject : MonoBehaviour
                 break;
         }
     }
+
+    public IEnumerator UpdateFillAmount(float cooldown, GlobalHelper.CardSide cardSide)
+    {
+        float t = 0;
+        float timer = 0;
+        switch (cardSide)
+        {
+            case GlobalHelper.CardSide.aSide:
+                while(t<cooldown)
+                {
+                    timer = t / cooldown;
+                    GUIHandler.instance.UpdateSideAFill(timer);
+                    t += Time.deltaTime;
+                    yield return null;
+                }
+                break;
+            case GlobalHelper.CardSide.bSide:
+                while (t < cooldown)
+                {
+                    timer = t / cooldown;
+ 
+                    GUIHandler.instance.UpdateSideBFill(timer);
+                    t += Time.deltaTime;
+                    yield return null;
+                }
+                break;
+            default:
+                break;
+        }
+        
+    }
+
 }
 

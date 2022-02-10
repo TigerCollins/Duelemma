@@ -7,7 +7,6 @@ using MoreMountains.Feedbacks;
 
 public class CardHolder : MonoBehaviour
 {
-    [SerializeField] MMFeedbacks cardInfoFeedback;
     [SerializeField] CardObject[] cardInfoObjects;
 
     [SerializeField] float levelLoadDelay = 3;
@@ -24,14 +23,14 @@ public class CardHolder : MonoBehaviour
         {
             foreach (CardObject item in cardInfoObjects)
             {
-                item.SetCardTextures();
+              //  item.SetCardTextures();
                 item.SetCardText();
-                item.SetCardTextures();
+               // item.SetCardTextures();
 
-                    item.parentTransform.gameObject.SetActive(!item.BothSidesLocked());
+                    item.gameObject.SetActive(!item.BothSidesLocked());
             
             }
-            cardInfoFeedback.PlayFeedbacks();
+            CardDisplayLink.instance.cardFeedback.PlayFeedbacks();
         }
     }
 

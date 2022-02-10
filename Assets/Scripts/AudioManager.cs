@@ -10,14 +10,12 @@ public class AudioManager : MonoBehaviour
 
     [Space(20)]
 
-    public AudioSource menuAudioSource;
-    public AudioSource sfxAudioSource;
+    public AudioSource[] menuAudioSource;
+    public AudioSource[] sfxAudioSource;
     public AudioSource sountrackAudioSource;
     float originalVolume;
-    float originalPitch;
     [Header("Pitcher")]
-    [SerializeField]
-    Vector2 pitchRange;
+    [SerializeField] Vector2 pitchRange;
     // Start is called before the first frame update
     void Awake()
     {
@@ -30,36 +28,88 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
             originalVolume = sountrackAudioSource.volume;
-            originalPitch = sfxAudioSource.volume;
             DontDestroyOnLoad(gameObject);
            
         }
     }
 
-    public void SFXAudioOneShot(AudioClip audioClip)
+    public void SFXAudioOneShot(AudioClip audioClip, float volume)
     {
-        sfxAudioSource.pitch = originalPitch;
-        sfxAudioSource.clip = audioClip;
-        sfxAudioSource.PlayOneShot(audioClip);
-    } public void SFXAudioPitchedOneShot(AudioClip audioClip)
+        foreach (AudioSource item in sfxAudioSource)
+        {
+            if (!item.isPlaying)
+            {
+                //override volume if different to current volume and not 0
+                if (volume != 0 || item.volume != volume)
+                {
+                    item.volume = volume;
+                }
+
+                item.pitch = 1;
+                item.clip = audioClip;
+                item.PlayOneShot(audioClip);
+                break;
+            }
+        }
+    } 
+    
+    public void SFXAudioPitchedOneShot(AudioClip audioClip, float volume)
     {
-        sfxAudioSource.pitch = RandomPitch;
-        sfxAudioSource.clip = audioClip;
-        sfxAudioSource.PlayOneShot(audioClip);
+        foreach (AudioSource item in sfxAudioSource)
+        {
+            if (!item.isPlaying)
+            {
+                //override volume if different to current volume and not 0
+                if (volume != 0 || item.volume != volume)
+                {
+                    item.volume = volume;
+                }
+
+                item.pitch = RandomPitch;
+                item.clip = audioClip;
+                item.PlayOneShot(audioClip);
+                break;
+            }
+        }
     }
 
-    public void MenuAudioOneShot(AudioClip audioClip)
+    public void MenuAudioOneShot(AudioClip audioClip, float volume)
     {
-        menuAudioSource.pitch = originalPitch;
-        menuAudioSource.clip = audioClip;
-        menuAudioSource.PlayOneShot(audioClip);
+        foreach (AudioSource item in menuAudioSource)
+        {
+            if(!item.isPlaying)
+            {
+                //override volume if different to current volume and not 0
+                if (volume != 0 || item.volume != volume)
+                {
+                    item.volume = volume;
+                }
+                item.pitch = 1;
+                item.clip = audioClip;
+                item.PlayOneShot(audioClip);
+                break;
+            }
+        }
     }
 
-    public void MenuAudioPitchedShot(AudioClip audioClip)
+    public void MenuAudioPitchedShot(AudioClip audioClip, float volume)
     {
-        menuAudioSource.pitch = RandomPitch;
-        menuAudioSource.clip = audioClip;
-        menuAudioSource.PlayOneShot(audioClip);
+        foreach (AudioSource item in menuAudioSource)
+        {
+            if (!item.isPlaying)
+            {
+                //override volume if different to current volume and not 0
+                if (volume != 0 || item.volume != volume)
+                {
+                    item.volume = volume;
+                }
+               
+                item.pitch = RandomPitch;
+                item.clip = audioClip;
+                item.PlayOneShot(audioClip);
+                break;
+            }
+        }
     }
     public void IsSoundtrackLoweredVolume(bool value)
     {

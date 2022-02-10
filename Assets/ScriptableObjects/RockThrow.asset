@@ -18,4 +18,4 @@ MonoBehaviour:
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Hurl a rock at... something!
   unlocked: 0
-  cooldown: 3
+  cooldown: 2.5

@@ -18,4 +18,4 @@ MonoBehaviour:
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Dash around like you just used a chariot!
   unlocked: 0
-  cooldown: 1
+  cooldown: 2.5

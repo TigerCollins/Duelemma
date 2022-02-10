@@ -13,7 +13,13 @@ public class PauseMenuHandler : MenuScript
 
     [SerializeField] GUIHandler guiScript;
 
-   
+   public bool IsAPauseMenu
+    {
+        get
+        {
+            return GlobalHelper.instance.IsPaused;
+        }
+    }
 
     public void CloseWholeMenuFunction()
     {
