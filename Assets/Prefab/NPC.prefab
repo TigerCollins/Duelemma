@@ -108,6 +108,7 @@ MonoBehaviour:
   playerTransform: {fileID: 3997574794052059276}
   isGrounded: 0
   isHittingWall: 0
+  canDealDamage: 0
 --- !u!114 &3993900933442133007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +124,6 @@ MonoBehaviour:
   animator: {fileID: 3907314994672072964}
   spriteRenderer: {fileID: 3862179287901793914}
   npcController: {fileID: 3993900933442133004}
-  spriteRendererCard: {fileID: 0}
   onJump:
     m_PersistentCalls:
       m_Calls: []
@@ -152,13 +152,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsProfile: {fileID: 11400000, guid: 46a031573ed752d4796082eefe067ccc, type: 2}
+  isPlayer: 0
   maxHealth: 0
   health: 4
   defence: 0
   maxLivesRemaining: 0
   livesRemaining: 0
   attack: 0
-  isAlive: 0
+  isAlive: 1
   destroyOnDeath: 1
   destroyTimer: 0
   onHealthGained:

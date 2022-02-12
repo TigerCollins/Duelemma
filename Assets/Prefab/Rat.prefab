@@ -109,7 +109,7 @@ MonoBehaviour:
   playerTransform: {fileID: 6672124291491080314}
   isGrounded: 0
   isHittingWall: 0
-  canDealDamage: 0
+  canDealDamage: 1
 --- !u!114 &6669610132415493369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   maxLivesRemaining: 0
   livesRemaining: 0
   attack: 0
-  isAlive: 0
+  isAlive: 1
   destroyOnDeath: 1
   destroyTimer: 0.4
   onHealthGained:

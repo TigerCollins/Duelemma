@@ -6803,6 +6803,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 46091472}
+        m_TargetAssemblyTypeName: GUIHandler, Assembly-CSharp
+        m_MethodName: ForceHide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &321733681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8586,7 +8598,7 @@ MonoBehaviour:
   title: {fileID: 1811014517}
   subtext: {fileID: 431437673}
   cardImage: {fileID: 252067308}
-  sideACardDetails: {fileID: 11400000, guid: 6d7114f18c3460045a9a6ecdcaccd562, type: 2}
+  sideACardDetails: {fileID: 11400000, guid: 5ea27d08e78a6c6499214ed62e1aa771, type: 2}
   sideBCardDetails: {fileID: 11400000, guid: 26a9dc6b495bf1d46a9ffbb23a2657a9, type: 2}
   aSideCardIsReady: 1
   bSideCardIsReady: 1
@@ -8736,7 +8748,7 @@ MonoBehaviour:
   title: {fileID: 392939623}
   subtext: {fileID: 10357684}
   cardImage: {fileID: 198752066}
-  sideACardDetails: {fileID: 11400000, guid: 5ea27d08e78a6c6499214ed62e1aa771, type: 2}
+  sideACardDetails: {fileID: 11400000, guid: efca9fb440ad3fb49bab8a4f38e0fc4d, type: 2}
   sideBCardDetails: {fileID: 11400000, guid: 45bef818d1b9f5a4c8d0817b476e8eed, type: 2}
   aSideCardIsReady: 1
   bSideCardIsReady: 1

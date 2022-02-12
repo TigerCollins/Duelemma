@@ -34,6 +34,13 @@ public class GUIHandler : MenuScript
         }
     }
 
+    public void ForceHide()
+    {
+        hideFeedback.PlayFeedbacks();
+        CloseWholeMenuFunction();
+       // DisableCanvasGroup(canvasGroup);
+    }
+
     public void UpdateHealth(int healthValue)
     {
         int id = 0;

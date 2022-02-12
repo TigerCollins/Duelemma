@@ -17,5 +17,5 @@ MonoBehaviour:
   cardName: Chariot
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Dash around like you just used a chariot!
-  unlocked: 1
+  unlocked: 0
   cooldown: 2.5
