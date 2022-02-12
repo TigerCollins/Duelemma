@@ -234,11 +234,15 @@ public class PlayerController : MonoBehaviour
 			if(stats != null)
             {
 		
-				statsController.DealDamageToOther(stats);
-				if(stats.TryGetComponent(out NPCScript npc))
+				if(stats.CurrentHealth != 0)
                 {
-					npc.GetKnockBack(statsController.StatProfile);
-                }
+					statsController.DealDamageToOther(stats);
+					if (stats.TryGetComponent(out NPCScript npc))
+					{
+						npc.GetKnockBack(statsController.StatProfile);
+					}
+				}
+				
 
 			}
 			HaltMovement();
@@ -659,21 +663,42 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-		//Enemy collision
-		if(other.transform.TryGetComponent(out NPCScript npc))
-        {
-			npcScript = npc;
-			npc.Attack();
-			
-		}
+		
 
-		else if (other.transform.TryGetComponent(out LevelLoadTrigger loadLevel))
+		 if (other.transform.TryGetComponent(out LevelLoadTrigger loadLevel))
 		{
 			loadLevel.LoadNextLevel();
 			canMove = false;
 		}
 	}
 
+
+	private void OnTriggerStay(Collider other)
+	{
+		//Enemy collision
+		if (other.transform.TryGetComponent(out NPCScript npc))
+		{
+			if(npc.canDealDamage)
+            {
+				npcScript = npc;
+				npc.Attack();
+				npc.StatsController.DealDamageToOther(statsController);
+				npc.canDealDamage = false;
+			}
+			
+
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		//Enemy collision
+		if (other.transform.TryGetComponent(out NPCScript npc))
+		{
+			npc.canDealDamage = true;
+
+		}
+	}
 	public void GetKnockBack()
 	{
 		float newDirection = 0;

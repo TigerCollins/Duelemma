@@ -27427,7 +27427,7 @@ MonoBehaviour:
   subtext: {fileID: 1096449517}
   cardImage: {fileID: 2104374855}
   sideACardDetails: {fileID: 11400000, guid: aeb64136cb4b95047a0fd19408b9c96b, type: 2}
-  sideBCardDetails: {fileID: 11400000, guid: efca9fb440ad3fb49bab8a4f38e0fc4d, type: 2}
+  sideBCardDetails: {fileID: 11400000, guid: 6d7114f18c3460045a9a6ecdcaccd562, type: 2}
   aSideCardIsReady: 1
   bSideCardIsReady: 1
 --- !u!114 &1848365605

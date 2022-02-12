@@ -9,8 +9,6 @@ public class NPCAnimation : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] NPCScript npcController;
 
-//    [SerializeField] Animator //animatorCard;
-    [SerializeField] SpriteRenderer spriteRendererCard;
 
     public UnityEvent onJump;
     public UnityEvent onGrounded;
@@ -152,7 +150,6 @@ public class NPCAnimation : MonoBehaviour
         {
             playerFacingRight = npcController.IsFacingRight;
             spriteRenderer.flipX = playerFacingRight;
-            spriteRendererCard.flipX = playerFacingRight;
         }
     }
 

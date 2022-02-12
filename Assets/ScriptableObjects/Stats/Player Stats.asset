@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   maxHealth: 7
-  baseHealth: 5
+  baseHealth: 7
   baseAttack: 1
   baseDefence: 0
   knockbackPower: 23.76

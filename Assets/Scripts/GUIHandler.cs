@@ -38,7 +38,7 @@ public class GUIHandler : MenuScript
         int id = 0;
         foreach (var item in healthImages)
         {
-            if(id>healthValue)
+            if(id>=healthValue)
             {
                 item.sprite = healthLostSprite;
             }

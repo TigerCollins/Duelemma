@@ -36,6 +36,8 @@ public class DimensionSwitcher : MonoBehaviour
             {
                 instance.environmentHandler.dimensionBObjects.Add(item);
             }
+            instance.environmentHandler.ChangeEnvironmentDimension();
+            GlobalHelper.instance.DimensionColour(currentDimension);
             Destroy(gameObject);
         }
 
@@ -148,23 +150,36 @@ public class DimensionEnvironmentHandler
             case GlobalHelper.Dimensions.dimensionA:
                 foreach (GameObject item in dimensionAObjects)
                 {
-                    item.SetActive(true);
+                    if(item != null)
+                    {
+                        item.SetActive(true);
+                    }
+                    
                 }
 
                 foreach (GameObject item in dimensionBObjects)
                 {
-                    item.SetActive(false);
+                    if (item != null)
+                    {
+                        item.SetActive(false);
+                    }
                 }
                 break;
             case GlobalHelper.Dimensions.dimensionB:
                 foreach (GameObject item in dimensionAObjects)
                 {
-                    item.SetActive(false);
+                    if (item != null)
+                    {
+                        item.SetActive(false);
+                    }
                 }
 
                 foreach (GameObject item in dimensionBObjects)
                 {
-                    item.SetActive(true);
+                    if (item != null)
+                    {
+                        item.SetActive(true);
+                    }
                 }
                 break;
             default:

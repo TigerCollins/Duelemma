@@ -17,5 +17,5 @@ MonoBehaviour:
   cardName: Strength
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Hurl a rock at... something!
-  unlocked: 0
+  unlocked: 1
   cooldown: 2.5

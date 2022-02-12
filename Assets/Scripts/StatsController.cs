@@ -7,6 +7,7 @@ public class StatsController : MonoBehaviour
 {
 
     [SerializeField] StatsDetails statsProfile;
+    public bool isPlayer;
 
     [Header("Health")]
     [SerializeField] int maxHealth;
@@ -112,7 +113,11 @@ public class StatsController : MonoBehaviour
         {
             if(health != value)
             {
-                UIManager.instance.onHealthChanged.Invoke(value);
+                if(isPlayer)
+                {
+                    UIManager.instance.onHealthChanged.Invoke(value);
+                }
+               
 
                 //Event Logic
                 if (value > health)
@@ -136,6 +141,11 @@ public class StatsController : MonoBehaviour
                     {
                         health = statsProfile.Health;
                         onLifeLost.Invoke();
+                    }
+
+                    else
+                    {
+                        onDeath.Invoke();
                     }
                     LivesRemaining = LivesRemaining - 1;
 

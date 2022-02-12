@@ -1588,7 +1588,7 @@ MonoBehaviour:
     useRaycast: 1
     raycastMask:
       serializedVersion: 2
-      m_Bits: 385
+      m_Bits: 2433
     raycastPoint: {fileID: 3114611267891543743}
     raycastDistance: 1.2
     raycastColour: {r: 0.2028302, g: 0.6222379, b: 1, a: 1}
@@ -1764,6 +1764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsProfile: {fileID: 11400000, guid: 2610ef389482c844a8b3f0227896e7ec, type: 2}
+  isPlayer: 1
   maxHealth: 0
   health: 4
   defence: 0
@@ -1844,7 +1845,7 @@ MonoBehaviour:
   playerSlowRate: 0.085
   worldSlowRate: 0
   suspendCardPrefab: {fileID: 5089479540798891894, guid: 2e63e5de660f3e04e8d5aac828956561, type: 3}
-  suspendDuration: 1
+  suspendDuration: 4
   arcHeight: 6
   rockSpeed: 6
   rockPrefab: {fileID: 7549399431323484172, guid: a22b9a3c076c9324f90380ed0d08bbad, type: 3}

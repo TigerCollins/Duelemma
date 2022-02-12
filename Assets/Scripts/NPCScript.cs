@@ -48,6 +48,7 @@ public class NPCScript : MonoBehaviour
 	Vector3 originalPos;
 	[SerializeField] bool isGrounded;
 	[SerializeField] bool isHittingWall;
+	public bool canDealDamage;
 
 	public enum MovementState
 	{
@@ -209,14 +210,22 @@ public class NPCScript : MonoBehaviour
 	public void Attack()
 	{
 		characterEvents.onAttack.Invoke();
+		
 	}
 
 
 	public void MovementVector()
 	{
 		float input = 0;
-		float distance = Vector3.Distance(PlayerController.instance.transform.position, transform.position);
-		float xDistance = Mathf.Abs(PlayerController.instance.transform.position.x - transform.position.x);
+		float distance = 0;
+		float xDistance = 0;
+		if (PlayerController.instance != null)
+        {
+			distance = Vector3.Distance(PlayerController.instance.transform.position, transform.position);
+			xDistance = Mathf.Abs(PlayerController.instance.transform.position.x - transform.position.x); 
+		}
+
+		
 		if (canMove)
 		{
 

@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectRB: {fileID: 0}
   objectNPC: {fileID: 0}
-  durationOfVineDecent: 3
+  durationOfVineDecent: 1
   durationOfVineAcent: 3
   obj: {fileID: 0}
   lineRenderer: {fileID: 2626932369416065329}

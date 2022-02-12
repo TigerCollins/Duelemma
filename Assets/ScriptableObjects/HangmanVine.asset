@@ -17,5 +17,5 @@ MonoBehaviour:
   cardName: The Hanged Man
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Hang your opponents from a vine for a moment!
-  unlocked: 0
+  unlocked: 1
   cooldown: 2.5

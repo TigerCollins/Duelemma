@@ -27,7 +27,7 @@ public class CardHolder : MonoBehaviour
                 item.SetCardText();
                // item.SetCardTextures();
 
-                    item.gameObject.SetActive(!item.BothSidesLocked());
+                    item.parentTransform.gameObject.SetActive(!item.BothSidesLocked());
             
             }
             CardDisplayLink.instance.cardFeedback.PlayFeedbacks();
