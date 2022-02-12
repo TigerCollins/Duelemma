@@ -146,6 +146,9 @@ public class StatsController : MonoBehaviour
                     else
                     {
                         onDeath.Invoke();
+                        DeathCountdown();
+                        onDeath.Invoke();
+                        isAlive = false;
                     }
                     LivesRemaining = LivesRemaining - 1;
 

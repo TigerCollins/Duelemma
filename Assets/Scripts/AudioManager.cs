@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
             if (!item.isPlaying)
             {
                 //override volume if different to current volume and not 0
-                if (volume != 0 || item.volume != volume)
+                if (volume != 0 && item.volume != volume)
                 {
                     item.volume = volume;
                 }
@@ -60,7 +60,7 @@ public class AudioManager : MonoBehaviour
             if (!item.isPlaying)
             {
                 //override volume if different to current volume and not 0
-                if (volume != 0 || item.volume != volume)
+                if (volume != 0 && item.volume != volume)
                 {
                     item.volume = volume;
                 }
@@ -80,7 +80,7 @@ public class AudioManager : MonoBehaviour
             if(!item.isPlaying)
             {
                 //override volume if different to current volume and not 0
-                if (volume != 0 || item.volume != volume)
+                if (volume != 0 && item.volume != volume)
                 {
                     item.volume = volume;
                 }
@@ -99,7 +99,7 @@ public class AudioManager : MonoBehaviour
             if (!item.isPlaying)
             {
                 //override volume if different to current volume and not 0
-                if (volume != 0 || item.volume != volume)
+                if (volume != 0 && item.volume != volume)
                 {
                     item.volume = volume;
                 }

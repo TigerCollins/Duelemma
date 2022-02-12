@@ -33,6 +33,7 @@ public class GUIHandler : MenuScript
             instance = this;
         }
     }
+
     public void UpdateHealth(int healthValue)
     {
         int id = 0;

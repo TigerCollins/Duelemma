@@ -678,7 +678,7 @@ public class PlayerController : MonoBehaviour
 		//Enemy collision
 		if (other.transform.TryGetComponent(out NPCScript npc))
 		{
-			if(npc.canDealDamage)
+			if(npc.canDealDamage && npc.StatsController.IsAlive)
             {
 				npcScript = npc;
 				npc.Attack();
