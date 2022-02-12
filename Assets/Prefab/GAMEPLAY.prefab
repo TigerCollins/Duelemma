@@ -944,6 +944,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6371251279158313273}
     m_Modifications:
+    - target: {fileID: 1137059028267406193, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
+      propertyPath: m_Color.a
+      value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137059028267406193, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
+      propertyPath: m_Color.b
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137059028267406193, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
+      propertyPath: m_Color.g
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137059028267406193, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
+      propertyPath: m_Color.r
+      value: 0.745283
+      objectReference: {fileID: 0}
     - target: {fileID: 1360017443933367521, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -995,6 +1011,14 @@ PrefabInstance:
     - target: {fileID: 3151087848167738012, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108932238891666515, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
+      propertyPath: DebugSettings.FlashDuration
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7252395561198407334, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 833435d8e0a848d488995aeab9be0620, type: 3}
