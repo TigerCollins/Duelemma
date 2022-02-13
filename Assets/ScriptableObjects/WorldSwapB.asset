@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WorldSwapB
   m_EditorClassIdentifier: 
   cardAbility: 0
-  cardArt: {fileID: 21300000, guid: e6f265b5f910e9a4894b525c57698771, type: 3}
+  cardArt: {fileID: 21300000, guid: dc9683f399fdb6b4caed233ceb0a5743, type: 3}
   cardName: Limbo
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Swap between dimensions at will

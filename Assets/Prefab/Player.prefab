@@ -1840,7 +1840,7 @@ MonoBehaviour:
   teleportCardPrefab: {fileID: 2375298987836806148, guid: c92ae21e49e07f94688b87ca79531d92, type: 3}
   teleportCardSpeed: 10
   dashSpeed: 20
-  dashTime: 0.1
+  dashTime: 0.2
   freezeDuration: 2
   playerSlowRate: 0.085
   worldSlowRate: 0

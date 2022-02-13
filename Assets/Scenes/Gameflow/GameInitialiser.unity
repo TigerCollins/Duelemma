@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  currentDimension: 0
+  currentDimension: 1
   environmentHandler:
     environmentDimensionObjects: []
     dimensionAObjects: []

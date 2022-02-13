@@ -96,29 +96,35 @@ public class CardObject : MonoBehaviour
                     if (sideACardDetails.IsUnlocked && aSideCardIsReady)
                     {
                         PlayerController.instance.characterEvents.onAbilityUsed.Invoke();
-                        PlayerController.instance.HaltMovement();
+                        
                         switch (sideACardDetails.CardAbility)
                         {
                             case CardAbilities.Ability.DimensionSwap:
                                 DimensionSwitcher.instance.onDimensionChange.Invoke();
+
                                 break;
                             case CardAbilities.Ability.Teleport:
                                 PlayerAbilities.instance.ThrowTeleportCard();
+                                PlayerController.instance.HaltMovement();
                                 break;
                             case CardAbilities.Ability.Dash:
                                 PlayerAbilities.instance.DashMovement();
+                                PlayerController.instance.HaltMovement();
                                 break;
                             case CardAbilities.Ability.TimeStop:
                                 PlayerAbilities.instance.FreezeTimeAbility();
                                 break;
                             case CardAbilities.Ability.HangmanVine:
+                                PlayerController.instance.HaltMovement();
                                 PlayerAbilities.instance.SuspendTarget();
                                 break;
                             case CardAbilities.Ability.RockThrow:
                                 PlayerAbilities.instance.ThrowRock();
+                                PlayerController.instance.HaltMovement();
                                 break;
                             case CardAbilities.Ability.ProjectileAttack:
                                 PlayerAbilities.instance.ProjectileAttack();
+                                PlayerController.instance.HaltMovement();
                                 break;
                             default:
                                 break;
@@ -131,7 +137,7 @@ public class CardObject : MonoBehaviour
                 {
                     if (sideBCardDetails.IsUnlocked && bSideCardIsReady)
                     {
-                        PlayerController.instance.HaltMovement();
+                       // PlayerController.instance.HaltMovement();
 
                         PlayerController.instance.characterEvents.onAbilityUsed.Invoke();
                         switch (sideBCardDetails.CardAbility)
@@ -140,21 +146,26 @@ public class CardObject : MonoBehaviour
                                 DimensionSwitcher.instance.onDimensionChange.Invoke();
                                 break;
                             case CardAbilities.Ability.Teleport:
+                                PlayerController.instance.HaltMovement();
                                 PlayerAbilities.instance.ThrowTeleportCard();
                                 break;
                             case CardAbilities.Ability.Dash:
                                 PlayerAbilities.instance.DashMovement();
+                                PlayerController.instance.HaltMovement();
                                 break;
                             case CardAbilities.Ability.TimeStop:
                                 PlayerAbilities.instance.FreezeTimeAbility();
                                 break;
                             case CardAbilities.Ability.HangmanVine:
                                 PlayerAbilities.instance.SuspendTarget();
+                                PlayerController.instance.HaltMovement();
                                 break;
                             case CardAbilities.Ability.RockThrow:
                                 PlayerAbilities.instance.ThrowRock();
+                                PlayerController.instance.HaltMovement();
                                 break;
                             case CardAbilities.Ability.ProjectileAttack:
+                                PlayerController.instance.HaltMovement();
                                 PlayerAbilities.instance.ProjectileAttack();
                                 break;
                             default:

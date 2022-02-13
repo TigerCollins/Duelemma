@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HangmanVine
   m_EditorClassIdentifier: 
   cardAbility: 4
-  cardArt: {fileID: 21300000, guid: 245c8799580a2cc45865edbe97904668, type: 3}
+  cardArt: {fileID: 21300000, guid: 525bfd246e84cc0479ec35ffffe5d5db, type: 3}
   cardName: The Hanged Man
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Hang your opponents from a vine for a moment!

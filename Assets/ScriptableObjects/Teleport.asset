@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Teleport
   m_EditorClassIdentifier: 
   cardAbility: 1
-  cardArt: {fileID: 21300000, guid: 8378d20d734e9404c9ff88ac43dccef9, type: 3}
+  cardArt: {fileID: 21300000, guid: 52988385f812a5d449367765631743bf, type: 3}
   cardName: Temperance
   abilityLockedFlavour: 
   abilityUnlockedFlavour: It's almost like you just teleported!

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dash
   m_EditorClassIdentifier: 
   cardAbility: 2
-  cardArt: {fileID: 21300000, guid: 96678a4a7b26994428b3e9759421639e, type: 3}
+  cardArt: {fileID: 21300000, guid: da2baf17791b9b64f8a6a0370ada7861, type: 3}
   cardName: Chariot
   abilityLockedFlavour: 
   abilityUnlockedFlavour: Dash around like you just used a chariot!

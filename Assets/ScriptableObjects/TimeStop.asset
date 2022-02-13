@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TimeStop
   m_EditorClassIdentifier: 
   cardAbility: 3
-  cardArt: {fileID: 21300000, guid: 31a0653a47042ff41b7b2a432cf70bff, type: 3}
+  cardArt: {fileID: 21300000, guid: bc825ed2056263e4293ceecd4f5a3379, type: 3}
   cardName: The World
   abilityLockedFlavour: 
   abilityUnlockedFlavour: ZA WARUDO! Grind time to a near halt temporarily!
